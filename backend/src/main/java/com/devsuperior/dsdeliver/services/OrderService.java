@@ -30,7 +30,8 @@ public class OrderService {
 		List<Order> list = repository.findOrdersWithProducts();
 		return list.stream().map(x -> new OrderDTO(x)).collect(Collectors.toList());
 	}
-	
+	//Precisei de copiar e colar o codigo, pois perdi tudo ao testar no Postman, algum processo rodando junto criou algum conflito, agora está certo.
+	//Esse metodo Nao retorna uma lista, mas apenas um objeto OrderDTO
 	@Transactional
 	public OrderDTO insert(OrderDTO dto) {
 		Order order = new Order(null, dto.getAddress(), dto.getLatitude(), dto.getLongitude(),
